@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>TIMERUN</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Firebase SDK (compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+</head>
+<body>
+
+<!-- ====== Главная ====== -->
+<div id="screen-main" class="screen active">
+  <div class="header" onclick="goHome()">TIMERUN</div>
+  <h1>TIMERUN</h1>
+  <div class="modes">
+    <button id="mode-timerrun">Timerrun</button>
+    <button id="mode-theetab">Theetab</button>
+    <button id="mode-clickbattle">Click-Battle</button>
+    <button id="mode-hours-tab">Hours-Tab</button>
+  </div>
+</div>
+
+<!-- ====== Режим ====== -->
+<div id="screen-mode" class="screen">
+  <div class="header" onclick="goHome()">TIMERUN</div>
+  <h2 id="mode-title"></h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Имя</th>
+        <th>Время</th>
+        <th>Дата</th>
+      </tr>
+    </thead>
+    <tbody id="leaderboard"></tbody>
+  </table>
+
+  <button class="run-btn">RUN</button>
+</div>
+
+<!-- ====== Таймер ====== -->
+<div id="screen-timer" class="screen">
+  <div class="header" onclick="goHome()">TIMERUN</div>
+  <div id="timer">00.000</div>
+  <div id="step-info"></div>
+
+  <!-- Click-Battle -->
+  <div id="clickbattle-container" style="display:none">
+    <p>Кликните 100 раз!</p>
+    <button id="click-btn">CLICK</button>
+    <p>Клики: <span id="click-count">0</span></p>
+  </div>
+
+  <!-- Hours-Tab -->
+  <div id="hours-container" style="display:none">
+    <p>Зажмите кнопку как можно дольше</p>
+    <button id="hold-btn">HOLD</button>
+    <p>Время: <span id="hold-time">00:00:00</span></p>
+  </div>
+
+  <button id="timer-btn">START</button>
+</div>
+
+<!-- ====== Результат ====== -->
+<div id="screen-result" class="screen">
+  <div class="header" onclick="goHome()">TIMERUN</div>
+  <h2 id="result-time"></h2>
+  <button id="again-btn">Заново</button>
+  <button id="publish-btn">Выложить</button>
+</div>
+
+<!-- ====== Опубликовать ====== -->
+<div id="screen-publish" class="screen">
+  <div class="header" onclick="goHome()">TIMERUN</div>
+  <input id="username" placeholder="Имя" />
+  <button id="publish-final">Опубликовать</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
